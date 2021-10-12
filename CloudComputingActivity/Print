@@ -1,0 +1,27 @@
+from pandas import DataFrame
+
+from Mongoinsert import get_database
+
+dbname = get_database()
+
+Family_coll = dbname["Family"]
+Comedy_coll = dbname["Comedy"]
+Romance_coll = dbname["Romance"]
+
+print("Top 3 Family Movies:")
+primary_key = Family_coll.find()
+primary = DataFrame(primary_key)
+print(primary)
+print("\n")
+
+print("Top 3 Comedy Movies:")
+primary_key = Comedy_coll.find()
+primary = DataFrame(primary_key)
+print(primary)
+print("\n")
+
+print("Top 3 Romance Movies:")
+primary_key = Romance_coll.find()
+primary = DataFrame(primary_key)
+print(primary)
+print("\n")
