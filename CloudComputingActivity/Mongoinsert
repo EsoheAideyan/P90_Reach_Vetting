@@ -1,0 +1,89 @@
+def get_database():
+    from pymongo import MongoClient
+    import pymongo
+
+    CONNECTION_STRING = "mongodb+srv://EsoheAideyan:Callofduty1!@esohe-aideyan.znrxi.mongodb.net/test"
+    
+    from pymongo import MongoClient
+    client = MongoClient(CONNECTION_STRING)
+
+    return client['Movies']
+    
+if __name__ == "__main__":    
+    
+    # Get the database
+    dbname = get_database()
+
+    connection_name = dbname["Family"]
+
+    family_1 = {
+        "Name" : "Ella Enchanted" ,
+        "Production" : "Produced by: Susan Miller, Jane Startz" , 
+        "Release Date" : "April 9, 2004",
+        "Ratings" :  'https://www.imdb.com/title/tt0327679/'
+    }
+
+    family_2 = {
+        "Name" : "Secret Life of Pets" ,
+        "Production" : "Illumination Entertainment" , 
+        "Release Date" : "June 16, 2016",
+        "Ratings" :  'https://www.rottentomatoes.com/m/the_secret_life_of_pets'
+    }
+
+    family_3 = {
+        "Name" : "The Grinch" ,
+        "Production" : "Produced by: Chris Meledandr, Janet Healy", 
+        "Release Date" : "November 9, 2018",
+        "Ratings" :  'https://www.imdb.com/title/tt2709692/'
+    }
+
+    connection_name.insert_many([family_1,family_2,family_3])
+
+    connection_name = dbname["Comedy"]
+
+    comedy_1 = {
+        "Name" : "3 Idiots" ,
+        "Production" : "Vinod Chopra Films" , 
+        "Release Date" : "December 23, 2009",
+        "Ratings" :  'https://www.imdb.com/title/tt1187043/',
+    }
+    comedy_2 = {
+        "Name" : "Shoalin Soccer" ,
+        "Production" : "Star Overseas Ltd" , 
+        "Release Date" : "July 12, 2001",
+        "Ratings" :  'https://www.commonsensemedia.org/movie-reviews/shaolin-soccer',
+    }
+    comedy_3 = {
+        "Name" : "Dumb and Dumber" ,
+        "Production" : "Produced by: Charles B. Wessler, Brad Krevoy, Steve Stabler" , 
+        "Release Date" : "December 6, 1994",
+        "Ratings" :  'https://www.imdb.com/title/tt0109686/',
+    }
+
+    connection_name.insert_many([comedy_1,comedy_2,comedy_3])
+
+    connection_name = dbname["Romance"]
+
+    rom_1 = {
+        "Name" : "Serendipity" ,
+        "Production" : "Produced by: Peter Abrams, Simon Fields" , 
+        "Release Date" : "October 5, 2001",
+        "Ratings" :  'https://www.rottentomatoes.com/m/serendipity'
+    }
+    rom_2 = {
+        "Name" : "The Notebook" ,
+        "Production" : "Produced by: Mark Johnson, Lynn Harris" , 
+        "Release Date" : "June 25, 2004",
+        "Ratings" :  'https://www.rogerebert.com/reviews/the-notebook-2004',
+    }
+    rom_3 = {
+        "Name" : "Dirty Dancing" ,
+        "Production" : "Great American Films Limited Partnership" , 
+        "Release Date" : "August 21, 1987",
+        "Ratings" :  'https://www.imdb.com/title/tt0092890/'
+    }
+
+    connection_name.insert_many([rom_1,rom_2,rom_3])
+
+
+ 
